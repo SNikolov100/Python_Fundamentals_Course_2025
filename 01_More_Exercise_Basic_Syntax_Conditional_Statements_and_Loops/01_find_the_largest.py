@@ -1,11 +1,10 @@
 enter_number = input()
 
-# new_number = ""
-# count = len(str(enter_number))
-#
-# for index in range(count-1, -1, -1):
-#     new_number += enter_number[index]
+enter_number_list = list(enter_number)
 
-new_number = int(str(enter_number)[::-1])
+enter_number_list.sort(reverse=True)
 
-print(new_number)
+print(int("".join(enter_number_list)))
+
+
+
