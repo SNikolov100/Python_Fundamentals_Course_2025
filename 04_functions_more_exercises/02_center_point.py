@@ -1,7 +1,7 @@
 from math import floor
 
 
-def cartesian_coordinate_system(first_points, second_points) -> list:
+def cartesian_coordinate_system(first_points: list, second_points: list) -> list:
     length_one = (first_points[0] ** 2 + first_points[1] ** 2) ** 0.5
     length_two = (second_points[0] ** 2 + second_points[1] ** 2) ** 0.5
     if length_one <= length_two:
