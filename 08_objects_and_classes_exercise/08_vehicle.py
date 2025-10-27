@@ -26,6 +26,7 @@ class Vehicle:
             return f"{self.model} {self.type} is owned by: {self.owner}"
         return f"{self.model} {self.type} is on sale: {self.price}"
 
+
 vehicle_type = "car"
 model = "BMW"
 price = 30000
