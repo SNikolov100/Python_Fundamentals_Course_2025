@@ -2,7 +2,7 @@ import re
 
 coordinates = {}
 encrypted_messages = input()
-pattern = r"([*^]+)([A-Za-z ]{6,})([*^]+)[^A-Za-z0-9]*\+(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\+"
+pattern = r"([*^]+)([a-z ]{6,})([*^]+)[^a-z0-9]*\+(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\+"
 
 coordinate_from_pattern = re.finditer(pattern, encrypted_messages, re.IGNORECASE)
 
