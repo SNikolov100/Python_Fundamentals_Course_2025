@@ -1,9 +1,10 @@
 import re
 
 demons_list = re.split(r",\s*", input())
-pattern_for_name = r"[^0-9\+\-\*\/]"
+pattern_for_name = r"[^0-9\+\-\*\/\.]"
 pattern_for_digit = r"[+-]?\d+(?:\.\d+)?"
-pattern_for_multi_divide = r"[\*\/]"
+pattern_for_multiplication = r"\*"
+pattern_for_divide = r"\/"
 demons_dict = {}
 
 for demons in demons_list:
@@ -17,13 +18,16 @@ for demons in demons_list:
     for char in char_for_name:
         if char:
             health += ord(char)
-    result_multi_divide = re.findall(pattern_for_multi_divide, demons)
+
+    result_multiplication = re.findall(pattern_for_multiplication, demons)
+    result_divide = re.findall(pattern_for_divide, demons)
     for digit in result_digit:
         damage_points += float(digit)
-    for action in result_multi_divide:
-        if action == "*":
+    if result_multiplication:
+        for action in result_multiplication:
             damage_points = damage_points * 2
-        else:
+    if result_divide:
+        for action in result_divide:
             damage_points = damage_points / 2
     demons_dict[demons] = [health, damage_points]
 
